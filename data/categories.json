@@ -1,0 +1,34 @@
+[
+  {
+    "id": "01",
+    "name": "Top Course"
+  },
+  {
+    "id": "02",
+    "name": "Regular Course"
+  },
+  {
+    "id": "03",
+    "name": "Bast Course"
+  },
+  {
+    "id": "04",
+    "name": "Basic Course"
+  },
+  {
+    "id": "05",
+    "name": "Advance Course"
+  },
+  {
+    "id": "06",
+    "name": "Free Course"
+  },
+  {
+    "id": "07",
+    "name": "Pad Course"
+  },
+  {
+    "id": "08",
+    "name": "All Course"
+  }
+]
