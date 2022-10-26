@@ -5,33 +5,57 @@ const port = process.env.PORT || 9000;
 
 app.use(cors());
 const categories = require('./data/categories.json');
-const course = require("./data/course.json");
+const courses = require("./data/course.json");
 
 app.get('/', (req, res) => {
     res.send('Course API Running');
 });
-
+// categories
 app.get("/course", (req, res) => {
   res.send(categories);
 });
-app.get("/course/:id", (req, res) => {
-    const id = req.params.id;
-  const SelectCourse = course.find(n=>n._id === id);
+// done 
+
+// category data (all courses)/ singel course data
+
+app.get("/courses/:id", (req, res) => {
+  const id = req.params.id;
+  const SelectCourse = courses.find((n) => n._id === id);
   res.send(SelectCourse);
 });
 
-app.get("/catagory/:id", (req, res) => {
+// ................ done
+
+// category part start
+app.get("/category/:id", (req, res) => {
   const id = req.params.id;
   if(id === '08'){
-    res.send(course);
+    res.send(courses);
   }
   else{
-    const catagory_course = course.filter((n) => n.category_id === id);
-    res.send(catagory_course);
+    const category_course = courses.filter((n) => n.category_id === id);
+    res.send(category_course);
   }
   
 });
 
+// ...........done 
+
+
+
+
+
+
+
+// all courses data 
+
+app.get("/courses", (req, res) => {
+  res.send(courses);
+});
+
+
+
+// run part 
 app.listen(port, () => {
     console.log('Server is running', port);
 });
